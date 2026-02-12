@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/TDLOGY/test_updatefirmware/build/CMakeFiles/bootloader
+D:/TDLOGY/test_updatefirmware/build/CMakeFiles/bootloader.rule
+D:/TDLOGY/test_updatefirmware/build/CMakeFiles/bootloader-complete.rule
+D:/TDLOGY/test_updatefirmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/TDLOGY/test_updatefirmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/TDLOGY/test_updatefirmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/TDLOGY/test_updatefirmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/TDLOGY/test_updatefirmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/TDLOGY/test_updatefirmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/TDLOGY/test_updatefirmware/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
