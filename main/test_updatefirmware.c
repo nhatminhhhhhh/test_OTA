@@ -15,7 +15,7 @@
 #define WIFI_PASS      "suronacoffee"
 
 #define VERSION_URL    "http://github.com/nhatminhhhhhh/test_OTA/version.txt"
-#define OTA_URL        "http://github.com/nhatminhhhhhh/test_OTA/firmware.bin"
+#define OTA_URL        "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/build/test_updatefirmware.bin"
 
 #define CURRENT_FW_VERSION "1.0.0"
 static const char *TAG = "update_firmware";
