@@ -14,11 +14,13 @@
 #define WIFI_SSID      "SURONA COFFEE-T2"
 #define WIFI_PASS      "suronacoffee"
 
-#define VERSION_URL    "http://github.com/nhatminhhhhhh/test_OTA/version.txt"
+#define VERSION_URL    "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/version.txt"
 #define OTA_URL        "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/build/test_updatefirmware.bin"
 
 #define CURRENT_FW_VERSION "1.0.0"
 static const char *TAG = "update_firmware";
+
+static bool wifi_connected = false;
 
 
 /* ================= WIFI ================= */
@@ -31,7 +33,21 @@ static void wifi_event_handler(void *arg,
     if (event_id == WIFI_EVENT_STA_START) {
         esp_wifi_connect();
     } else if (event_id == WIFI_EVENT_STA_DISCONNECTED) {
+        ESP_LOGI(TAG, "WiFi disconnected, reconnecting...");
+        wifi_connected = false;
         esp_wifi_connect();
+    }
+}
+
+static void ip_event_handler(void *arg,
+                            esp_event_base_t event_base,
+                            int32_t event_id,
+                            void *event_data)
+{
+    if (event_id == IP_EVENT_STA_GOT_IP) {
+        ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
+        ESP_LOGI(TAG, "Got IP: " IPSTR, IP2STR(&event->ip_info.ip));
+        wifi_connected = true;
     }
 }
 
@@ -47,6 +63,10 @@ static void wifi_init_sta(void)
     esp_event_handler_register(WIFI_EVENT,
                                ESP_EVENT_ANY_ID,
                                &wifi_event_handler,
+                               NULL);
+    esp_event_handler_register(IP_EVENT,
+                               IP_EVENT_STA_GOT_IP,
+                               &ip_event_handler,
                                NULL);
 
     wifi_config_t wifi_config = {
@@ -104,9 +124,13 @@ static void ota_task(void *pvParameter)
 
     ESP_LOGI(TAG, "New firmware found, starting OTA...");
 
-    esp_http_client_config_t ota_config = {
+    esp_http_client_config_t http_config = {
         .url = OTA_URL,
-        .timeout_ms = 5000,
+        .timeout_ms = 10000,
+    };
+
+    esp_https_ota_config_t ota_config = {
+        .http_config = &http_config,
     };
 
     esp_err_t ret = esp_https_ota(&ota_config);
@@ -124,10 +148,30 @@ static void ota_task(void *pvParameter)
 
 void app_main(void)
 {
-    nvs_flash_init();
+    // Initialize NVS
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
+
     wifi_init_sta();
 
-    vTaskDelay(pdMS_TO_TICKS(5000)); // chờ WiFi ổn định
+    // Wait for WiFi connection
+    ESP_LOGI(TAG, "Waiting for WiFi connection...");
+    int retry = 0;
+    while (!wifi_connected && retry < 30) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
+        retry++;
+    }
+
+    if (!wifi_connected) {
+        ESP_LOGE(TAG, "Failed to connect to WiFi");
+        return;
+    }
+
+    ESP_LOGI(TAG, "WiFi connected successfully");
 
     xTaskCreate(ota_task, "ota_task", 8192, NULL, 5, NULL);
 
