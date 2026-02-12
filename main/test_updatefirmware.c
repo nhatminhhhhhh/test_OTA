@@ -16,7 +16,7 @@
 #define WIFI_PASS      "suronacoffee"
 
 #define VERSION_URL    "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/version.txt"
-#define OTA_URL        "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/build/test_updatefirmware.bin"
+#define OTA_URL        "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/main/build/test_updatefirmware.bin"
 
 #define CURRENT_FW_VERSION "1.0.4"
 static const char *TAG = "update_firmware";
@@ -181,6 +181,7 @@ void app_main(void)
 
     while (1) {
         ESP_LOGI(TAG, "Current firmware version: %s", CURRENT_FW_VERSION);
+        ESP_LOGI(TAG, "I update firmware example running...");
         ESP_LOGI(TAG, "Running application...");
         vTaskDelay(pdMS_TO_TICKS(3000));
     }

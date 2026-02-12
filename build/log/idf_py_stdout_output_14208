@@ -1,0 +1,200 @@
+0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Feb 12 2026 21:04:20[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (77) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (85) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (92) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (100) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (107) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (115) boot: End of partition table[0m
+[0;32mI (119) boot: Defaulting to factory image[0m
+[0;32mI (124) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2f8e4h (194788) map[0m
+[0;32mI (199) esp_image: segment 1: paddr=0003f90c vaddr=3ffb0000 size=0070ch (  1804) load[0m
+[0;32mI (200) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=9f130h (651568) map[0m
+[0;32mI (428) esp_image: segment 3: paddr=000df158 vaddr=3ffb070c size=037e4h ( 14308) load[0m
+[0;32mI (434) esp_image: segment 4: paddr=000e2944 vaddr=40080000 size=1766ch ( 95852) load[0m
+[0;32mI (483) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (483) boot: Disabling RNG early entropy source...[0m
+[0;32mI (496) cpu_start: Multicore app[0m
+[0;32mI (504) cpu_start: Pro cpu start user code[0m
+[0;32mI (504) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (504) app_init: Application information:[0m
+[0;32mI (507) app_init: Project name:     test_updatefirmware[0m
+[0;32mI (513) app_init: App version:      1.0.3[0m
+[0;32mI (517) app_init: Compile time:     Feb 12 2026 21:27:11[0m
+[0;32mI (523) app_init: ELF file SHA256:  7ab616a54...[0m
+[0;32mI (529) app_init: ESP-IDF:          v5.3.2-dirty[0m
+[0;32mI (534) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (539) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (544) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (549) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFB8758 len 000278A8 (158 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (574) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009766C len 00008994 (34 KiB): IRAM[0m
+[0;32mI (589) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;32mI (597) main_task: Started on CPU0[0m
+[0;32mI (607) main_task: Calling app_main()[0m
+[0;32mI (637) wifi:wifi driver task: 3ffc06f4, prio:23, stack:6656, core=0[0m
+[0;32mI (647) wifi:wifi firmware version: b0fd6006b[0m
+[0;32mI (647) wifi:wifi certification version: v7.0[0m
+[0;32mI (647) wifi:config NVS flash: enabled[0m
+[0;32mI (647) wifi:config nano formating: disabled[0m
+[0;32mI (647) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (657) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (657) wifi:Init management short buffer num: 32[0m
+[0;32mI (667) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (667) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (677) wifi:Init static rx buffer num: 10[0m
+[0;32mI (677) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (677) wifi_init: rx ba win: 6[0m
+[0;32mI (687) wifi_init: accept mbox: 6[0m
+[0;32mI (687) wifi_init: tcpip mbox: 32[0m
+[0;32mI (687) wifi_init: udp mbox: 6[0m
+[0;32mI (697) wifi_init: tcp mbox: 6[0m
+[0;32mI (697) wifi_init: tcp tx win: 5760[0m
+[0;32mI (707) wifi_init: tcp rx win: 5760[0m
+[0;32mI (707) wifi_init: tcp mss: 1440[0m
+[0;32mI (707) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (717) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (717) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (727) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (807) wifi:mode : sta (1c:69:20:c6:b7:98)[0m
+[0;32mI (807) wifi:enable tsf[0m
+[0;32mI (807) update_firmware: Waiting for WiFi connection...[0m
+[0;32mI (827) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (827) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (867) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (887) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (937) wifi:connected with SURONA COFFEE-T2, aid = 1, channel 6, BW20, bssid = 60:22:32:5a:54:cd[0m
+[0;32mI (937) wifi:security: WPA2-PSK, phy: bgn, rssi: -63[0m
+[0;32mI (947) wifi:pm start, type: 1[0m
+
+[0;32mI (947) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (997) wifi:<ba-add>idx:0 (ifx:0, 60:22:32:5a:54:cd), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1107) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1957) esp_netif_handlers: sta ip: 192.168.1.167, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (1957) update_firmware: Got IP: 192.168.1.167[0m
+[0;32mI (2817) update_firmware: WiFi connected successfully[0m
+[0;32mI (2817) update_firmware: Checking firmware version...[0m
+[0;32mI (2817) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (2817) update_firmware: Running application...[0m
+[0;32mI (2837) wifi:<ba-add>idx:1 (ifx:0, 60:22:32:5a:54:cd), tid:5, ssn:1, winSize:64[0m
+[0;32mI (3617) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (4767) update_firmware: Firmware is up to date[0m
+[0;32mI (5827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (5827) update_firmware: Running application...[0m
+[0;32mI (8827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (8827) update_firmware: Running application...[0m
+[0;32mI (11827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (11827) update_firmware: Running application...[0m
+[0;32mI (14827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (14827) update_firmware: Running application...[0m
+[0;32mI (17827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (17827) update_firmware: Running application...[0m
+[0;32mI (20827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (20827) update_firmware: Running application...[0m
+[0;32mI (23827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (23827) update_firmware: Running application...[0m
+[0;32mI (26827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (26827) update_firmware: Running application...[0m
+[0;32mI (29827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (29827) update_firmware: Running application...[0m
+[0;32mI (32827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (32827) update_firmware: Running application...[0m
+[0;32mI (35827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (35827) update_firmware: Running application...[0m
+[0;32mI (38827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (38827) update_firmware: Running application...[0m
+[0;32mI (41827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (41827) update_firmware: Running application...[0m
+[0;32mI (44827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (44827) update_firmware: Running application...[0m
+[0;32mI (47827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (47827) update_firmware: Running application...[0m
+[0;32mI (50827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (50827) update_firmware: Running application...[0m
+[0;32mI (53827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (53827) update_firmware: Running application...[0m
+[0;32mI (56827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (56827) update_firmware: Running application...[0m
+[0;32mI (59827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (59827) update_firmware: Running application...[0m
+[0;32mI (62827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (62827) update_firmware: Running application...[0m
+[0;32mI (65827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (65827) update_firmware: Running application...[0m
+[0;32mI (68827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (68827) update_firmware: Running application...[0m
+[0;32mI (71827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (71827) update_firmware: Running application...[0m
+[0;32mI (74827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (74827) update_firmware: Running application...[0m
+[0;32mI (77827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (77827) update_firmware: Running application...[0m
+[0;32mI (80827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (80827) update_firmware: Running application...[0m
+[0;32mI (83827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (83827) update_firmware: Running application...[0m
+[0;32mI (86827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (86827) update_firmware: Running application...[0m
+[0;32mI (89827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (89827) update_firmware: Running application...[0m
+[0;32mI (92827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (92827) update_firmware: Running application...[0m
+[0;32mI (95827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (95827) update_firmware: Running application...[0m
+[0;32mI (98827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (98827) update_firmware: Running application...[0m
+[0;32mI (101827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (101827) update_firmware: Running application...[0m
+[0;32mI (104827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (104827) update_firmware: Running application...[0m
+[0;32mI (107827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (107827) update_firmware: Running application...[0m
+[0;32mI (110827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (110827) update_firmware: Running application...[0m
+[0;32mI (113827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (113827) update_firmware: Running application...[0m
+[0;32mI (116827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (116827) update_firmware: Running application...[0m
+[0;32mI (119827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (119827) update_firmware: Running application...[0m
+[0;32mI (122827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (122827) update_firmware: Running application...[0m
+[0;32mI (125827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (125827) update_firmware: Running application...[0m
+[0;32mI (128827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (128827) update_firmware: Running application...[0m
+[0;32mI (131827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (131827) update_firmware: Running application...[0m
+[0;32mI (134827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (134827) update_firmware: Running application...[0m
+[0;32mI (137827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (137827) update_firmware: Running application...[0m
+[0;32mI (140827) update_firmware: Current firmware version: 1.0.3[0m
+[0;32mI (140827) update_firmware: Running application...[0m
