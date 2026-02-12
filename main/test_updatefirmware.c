@@ -17,7 +17,7 @@
 #define VERSION_URL    "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/version.txt"
 #define OTA_URL        "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/build/test_updatefirmware.bin"
 
-#define CURRENT_FW_VERSION "1.0.1"
+#define CURRENT_FW_VERSION "1.0.2"
 static const char *TAG = "update_firmware";
 static bool wifi_connected = false;
 
@@ -94,6 +94,7 @@ static bool check_new_version(void)
     esp_http_client_config_t config = {
         .url = VERSION_URL,
         .event_handler = http_event_handler,
+        .skip_cert_common_name_check = true,
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
@@ -126,6 +127,7 @@ static void ota_task(void *pvParameter)
     esp_http_client_config_t http_config = {
         .url = OTA_URL,
         .timeout_ms = 10000,
+        .skip_cert_common_name_check = true,
     };
 
     esp_https_ota_config_t ota_config = {
@@ -175,6 +177,7 @@ void app_main(void)
     xTaskCreate(ota_task, "ota_task", 8192, NULL, 5, NULL);
 
     while (1) {
+        ESP_LOGI(TAG, "Current firmware version: %s", CURRENT_FW_VERSION);
         ESP_LOGI(TAG, "Running application...");
         vTaskDelay(pdMS_TO_TICKS(3000));
     }
