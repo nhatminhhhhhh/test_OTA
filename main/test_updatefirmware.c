@@ -17,9 +17,8 @@
 #define VERSION_URL    "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/version.txt"
 #define OTA_URL        "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/build/test_updatefirmware.bin"
 
-#define CURRENT_FW_VERSION "1.0.0"
+#define CURRENT_FW_VERSION "1.0.1"
 static const char *TAG = "update_firmware";
-
 static bool wifi_connected = false;
 
 
