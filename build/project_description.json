@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "test_updatefirmware",
-    "project_version":    "1",
+    "project_version":    "1.0.0",
     "project_path":       "D:/TDLOGY/test_updatefirmware",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.3.1",
     "build_dir":          "D:/TDLOGY/test_updatefirmware/build",
