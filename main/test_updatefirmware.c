@@ -10,6 +10,7 @@
 #include "esp_http_client.h"
 #include "esp_https_ota.h"
 #include "esp_ota_ops.h"
+#include "esp_crt_bundle.h"
 
 #define WIFI_SSID      "SURONA COFFEE-T2"
 #define WIFI_PASS      "suronacoffee"
@@ -17,7 +18,7 @@
 #define VERSION_URL    "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/version.txt"
 #define OTA_URL        "https://raw.githubusercontent.com/nhatminhhhhhh/test_OTA/main/build/test_updatefirmware.bin"
 
-#define CURRENT_FW_VERSION "1.0.2"
+#define CURRENT_FW_VERSION "1.0.3"
 static const char *TAG = "update_firmware";
 static bool wifi_connected = false;
 
@@ -95,6 +96,7 @@ static bool check_new_version(void)
         .url = VERSION_URL,
         .event_handler = http_event_handler,
         .skip_cert_common_name_check = true,
+        .crt_bundle_attach = esp_crt_bundle_attach,
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
@@ -128,6 +130,7 @@ static void ota_task(void *pvParameter)
         .url = OTA_URL,
         .timeout_ms = 10000,
         .skip_cert_common_name_check = true,
+        .crt_bundle_attach = esp_crt_bundle_attach,
     };
 
     esp_https_ota_config_t ota_config = {

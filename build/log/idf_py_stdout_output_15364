@@ -1,0 +1,121 @@
+ON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Feb 12 2026 21:04:20[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (77) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (85) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (92) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (100) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (107) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (115) boot: End of partition table[0m
+[0;32mI (119) boot: Defaulting to factory image[0m
+[0;32mI (124) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1eb84h (125828) map[0m
+[0;32mI (175) esp_image: segment 1: paddr=0002ebac vaddr=3ffb0000 size=0146ch (  5228) load[0m
+[0;32mI (178) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=9eb28h (650024) map[0m
+[0;32mI (404) esp_image: segment 3: paddr=000ceb50 vaddr=3ffb146c size=02a84h ( 10884) load[0m
+[0;32mI (408) esp_image: segment 4: paddr=000d15dc vaddr=40080000 size=1766ch ( 95852) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (459) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (483) app_init: Project name:     test_updatefirmware[0m
+[0;32mI (489) app_init: App version:      1.0.2[0m
+[0;32mI (493) app_init: Compile time:     Feb 12 2026 21:22:11[0m
+[0;32mI (499) app_init: ELF file SHA256:  8789894e3...[0m
+[0;32mI (505) app_init: ESP-IDF:          v5.3.2-dirty[0m
+[0;32mI (510) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (515) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (520) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (525) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (532) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (538) heap_init: At 3FFB8748 len 000278B8 (158 KiB): DRAM[0m
+[0;32mI (544) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (557) heap_init: At 4009766C len 00008994 (34 KiB): IRAM[0m
+[0;32mI (565) spi_flash: detected chip: generic[0m
+[0;32mI (568) spi_flash: flash io: dio[0m
+[0;32mI (572) main_task: Started on CPU0[0m
+[0;32mI (582) main_task: Calling app_main()[0m
+[0;32mI (612) wifi:wifi driver task: 3ffc06e4, prio:23, stack:6656, core=0[0m
+[0;32mI (622) wifi:wifi firmware version: b0fd6006b[0m
+[0;32mI (622) wifi:wifi certification version: v7.0[0m
+[0;32mI (622) wifi:config NVS flash: enabled[0m
+[0;32mI (622) wifi:config nano formating: disabled[0m
+[0;32mI (622) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (632) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (632) wifi:Init management short buffer num: 32[0m
+[0;32mI (642) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (642) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (652) wifi:Init static rx buffer num: 10[0m
+[0;32mI (652) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (652) wifi_init: rx ba win: 6[0m
+[0;32mI (662) wifi_init: accept mbox: 6[0m
+[0;32mI (662) wifi_init: tcpip mbox: 32[0m
+[0;32mI (662) wifi_init: udp mbox: 6[0m
+[0;32mI (672) wifi_init: tcp mbox: 6[0m
+[0;32mI (672) wifi_init: tcp tx win: 5760[0m
+[0;32mI (682) wifi_init: tcp rx win: 5760[0m
+[0;32mI (682) wifi_init: tcp mss: 1440[0m
+[0;32mI (682) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (692) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (692) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (702) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (782) wifi:mode : sta (1c:69:20:c6:b7:98)[0m
+[0;32mI (782) wifi:enable tsf[0m
+[0;32mI (782) update_firmware: Waiting for WiFi connection...[0m
+[0;32mI (802) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (802) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (822) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (822) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (842) wifi:connected with SURONA COFFEE-T2, aid = 1, channel 6, BW20, bssid = 60:22:32:5a:54:cd[0m
+[0;32mI (842) wifi:security: WPA2-PSK, phy: bgn, rssi: -64[0m
+[0;32mI (842) wifi:pm start, type: 1[0m
+
+[0;32mI (842) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (862) wifi:<ba-add>idx:0 (ifx:0, 60:22:32:5a:54:cd), tid:0, ssn:1, winSize:64[0m
+[0;32mI (882) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1852) esp_netif_handlers: sta ip: 192.168.1.167, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (1852) update_firmware: Got IP: 192.168.1.167[0m
+[0;32mI (2782) update_firmware: WiFi connected successfully[0m
+[0;32mI (2782) update_firmware: Checking firmware version...[0m
+[0;32mI (2782) update_firmware: Current firmware version: 1.0.2[0m
+[0;32mI (2782) update_firmware: Running application...[0m
+[0;32mI (2812) wifi:<ba-add>idx:1 (ifx:0, 60:22:32:5a:54:cd), tid:5, ssn:1, winSize:64[0m
+[0;31mE (2992) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[0;31mE (2992) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[0;31mE (3002) esp-tls: create_ssl_handle failed[0m
+[0;31mE (3002) esp-tls: Failed to open new connection[0m
+[0;31mE (3012) transport_base: Failed to open a new connection[0m
+[0;31mE (3022) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;32mI (3022) update_firmware: Firmware is up to date[0m
+[0;32mI (5792) update_firmware: Current firmware version: 1.0.2[0m
+[0;32mI (5792) update_firmware: Running application...[0m
+[0;32mI (8792) update_firmware: Current firmware version: 1.0.2[0m
+[0;32mI (8792) update_firmware: Running application...[0m
+[0;32mI (11792) update_firmware: Current firmware version: 1.0.2[0m
+[0;32mI (11792) update_firmware: Running application...[0m
+[0;32mI (14792) update_firmware: Current firmware version: 1.0.2[0m
+[0;32mI (14792) update_firmware: Running application...[0m
